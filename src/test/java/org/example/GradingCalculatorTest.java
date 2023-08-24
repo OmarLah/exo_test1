@@ -5,13 +5,18 @@ import org.junit.jupiter.api.Test;
 
 public class GradingCalculatorTest {
 
+    private GradingCalculator gradingCalculator;
+
+    private void initGradingCalculator(int score, int attendance) {
+        gradingCalculator = new GradingCalculator();
+        gradingCalculator.setScore(score);
+        gradingCalculator.setAttendancePercentage(attendance);
+    }
 
     @Test
     public void getGradeNoteA() {
-        GradingCalculator gradingCalculator = new GradingCalculator();
 
-        gradingCalculator.setScore(91);
-        gradingCalculator.setAttendancePercentage(71);
+        initGradingCalculator(91, 71);
         char result = gradingCalculator.getGrade();
 
         Assertions.assertEquals('A', result);
