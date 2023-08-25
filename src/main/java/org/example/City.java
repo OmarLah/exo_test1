@@ -11,18 +11,16 @@ public class City {
 
     public List searchCity(String city) {
 
-        String cityLow = city.toLowerCase();
         List list = new ArrayList<>();
 
         if(city.length() >= 2) {
-            int index = city.length();
             for (String c : listCity) {
-                if(c.toLowerCase().contains(cityLow)) {
+                if(c.toLowerCase().contains(city.toLowerCase())) {
                     list.add(c);
                 }
             }
             return list;
-        } else if (city == "*") {
+        } else if (city.equals("*")) {
             list = listCity;
             return list;
         } else {

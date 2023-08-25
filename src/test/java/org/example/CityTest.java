@@ -1,4 +1,4 @@
-package org.example.test;
+package org.example;
 
 import org.example.City;
 import org.junit.jupiter.api.Assertions;
